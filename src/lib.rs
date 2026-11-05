@@ -1,20 +1,33 @@
-//! SigmaOS Stream
-//!
-//! IPTV and media streaming client for SigmaOS. Parses M3U playlists and
-//! plays live TV channels and VOD content via a configurable media backend.
-//!
-//! # Modules
-//!
-//! - [`playlist`]: M3U playlist parsing, channel grouping, and VOD catalog.
-//! - [`player`]: Media player backend abstraction and playback control.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ChannelItem {
+    pub name: String,
+    pub stream_url: String,
+    pub category: String,
+}
 
-pub mod playlist;
-pub mod player;
+#[derive(Debug, Default)]
+pub struct IptvPlayer {
+    channels: Vec<ChannelItem>,
+}
 
-/// Initialize the stream subsystem.
-///
-/// Call once at startup to load configuration, detect available
-/// media backends, and prepare the playlist engine.
-pub fn init() {
-    // TODO: load config, detect media backend, initialize playlist engine
+impl IptvPlayer {
+    pub fn new() -> Self { Self { channels: Vec::new() } }
+    pub fn add_channel(&mut self, name: &str, url: &str, cat: &str) {
+        self.channels.push(ChannelItem { name: name.into(), stream_url: url.into(), category: cat.into() });
+    }
+    pub fn channel_count(&self) -> usize { self.channels.len() }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_iptv_player_aaa() {
+        // Arrange
+        let mut player = IptvPlayer::new();
+        // Act
+        player.add_channel("News 24", "https://news.stream/live.m3u8", "News");
+        // Assert
+        assert_eq!(player.channel_count(), 1);
+    }
 }

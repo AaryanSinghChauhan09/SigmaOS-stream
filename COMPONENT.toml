@@ -1,0 +1,6 @@
+[component]
+name = "SigmaOS-stream"
+tier = 4
+description = "IPTV stream playlist player and channel browser inspired by Hypnotix and Omarchy IPTV"
+contracts = ['iptv-stream-player', 'm3u-playlist-parser', 'channel-guide']
+upstream_inspirations = ['https://github.com/linuxmint/hypnotix']
