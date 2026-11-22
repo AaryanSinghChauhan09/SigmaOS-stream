@@ -1,18 +1,18 @@
-# SigmaOS-SigmaOS-stream Component Wiki
+# SigmaOS-stream Component Wiki
 
 ## Overview
-SigmaOS-SigmaOS-stream provides IPTV / m3u stream player for the SigmaOS operating system. It demonstrates the subsystem and integration within the SigmaOS ecosystem, following the principles of clear abstraction and deterministic initialization.
+SigmaOS-stream provides component for the SigmaOS operating system. It demonstrates the subsystem and integration within the SigmaOS ecosystem, following the principles of clear abstraction and deterministic initialization.
 
 ## Principles
-- Single Responsibility
-- SigmaOS-stream Abstraction
-- Fail-Fast on SigmaOS-stream Initialization Errors
-- Deterministic SigmaOS-stream Setup
-- Clear Abstraction Over SigmaOS-stream APIs
-- Composition over Inheritance for SigmaOS-stream extensions
+- **Single Responsibility**: Each component has a single well-defined purpose
+- **SigmaOS-stream Abstraction**: Clear abstraction over the component's APIs and functionality
+- **Fail-Fast on SigmaOS-stream Initialization Errors**: Fail-fast principle for initialization errors
+- **Deterministic SigmaOS-stream Setup**: Deterministic initialization and configuration
+- **Clear Abstraction Over SigmaOS-stream APIs**: Well-defined, clear APIs
+- **Composition over Inheritance for SigmaOS-stream extensions**: Use composition patterns for extensions
 
 ## Architecture
-SigmaOS-SigmaOS-stream follows a SigmaOS-stream pattern:
+SigmaOS-stream follows a SigmaOS-stream pattern:
 - **SigmaOS-stream Core**: Provides SigmaOS-stream support, SigmaOS-stream management, and SigmaOS-stream tracking
 - **Management**: Supports SigmaOS-stream management, SigmaOS-stream configuration, and SigmaOS-stream lifecycle
 - **Tracking**: Supports SigmaOS-stream status, SigmaOS-stream tracking, and SigmaOS-stream lifecycle
@@ -20,10 +20,10 @@ SigmaOS-SigmaOS-stream follows a SigmaOS-stream pattern:
 
 ## API
 The component provides the following public APIs:
--  - Manage a SigmaOS-stream by given configuration
--  - Register a SigmaOS-stream by given name
--  - Get SigmaOS-stream status and SigmaOS-stream availability
--  - Track SigmaOS-stream management and SigmaOS-stream tracking
+- Manage a SigmaOS-stream by given configuration
+- Register a SigmaOS-stream by given name
+- Get SigmaOS-stream status and SigmaOS-stream availability
+- Track SigmaOS-stream management and SigmaOS-stream tracking
 - Error types for SigmaOS-stream failure scenarios or unsupported SigmaOS-stream types
 
 ## Test Structure (Arrange-Act-ASSERT)
@@ -32,11 +32,8 @@ All tests follow the AAA pattern:
 2. **Act**: Execute the code under test (SigmaOS-stream init, SigmaOS-stream management)
 3. **Assert**: Verify the expected SigmaOS-stream results
 
-Example:
-
-
 ## Development
-- Follows Rust best practices with 
+- Follows best practices with clear abstraction boundaries
 - SigmaOS-stream initialization is best-effort; gracefully degrades on unsupported configurations
 - Comprehensive error types for all SigmaOS-stream failure scenarios
 - Unit tests provided for SigmaOS-stream management and configuration
